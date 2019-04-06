@@ -12,7 +12,12 @@ SolusVM Client .NET Library
 `Dim bandwidth_usage As String = Await client.InfoAsync().bw`  
   
 * Reboot  
-`Await client.RebootAsync()`  
+```
+Dim return_value = Await client.RebootAsync()
+If return_value.statusmsg = "rebooted" Then
+    Console.WriteLine("VPS Rebooted.")
+End If
+```
   
 * ... And more.
   
